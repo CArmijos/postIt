@@ -1,0 +1,56 @@
+<!-- Vista Muestra Todos los Registros de PostIT -->
+<div class="jumbotrom mt-4">
+    <div class="row">
+        <div class="container">
+            <div><h3><b>PostIt de Usuario, {{ user.nombre }}</b></h3></div>
+        </div>
+        
+        <!-- Realiza Recorrido por los registros de los postIT... -->
+        {{#each registros}}
+
+            <div class="col-md-4">
+
+                <div class="card"  style="height: 18rem;">
+
+                    <div class="card-body">
+                        <h4 class="card-title d-flex-justify-content-between align-items-center">
+                            {{titulo}} <a href="/modificaNota/{{_id}}"><i class="fas fa-edit"></i></a>
+                        </h4>
+
+                        <div  class="d-flex justify-content-between align-items-center">
+                            <textarea  name="descripcion" class="form-control" readonly >{{descripcion}}</textarea>
+                        </div>
+                        <br>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group  btn-block">
+
+                                <form action="/eliminaNota/{{_id}}" method="POST">
+                                    <button type="submit" class="btn btn-danger btn-block btn-sm">
+                                        Eliminar PostIT !!
+                                    </button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+        {{else}}
+
+            <div class="card mx-auto">
+                <div class="card-body">
+
+                    <div class="jumbotron">
+                        <p class="lead"><h5><b>NOTA: No hay PostIT, para Crear haz Click sobre <u>Agregar PostIT</u></b></h5></p>
+                        <a href="agregarNota" class="btn btn-success btn-block"> Crear un PostIT !!!</a>
+                    </div>
+
+                </div>
+            </div>
+            
+        {{/each}}
+
+    </div>
+
+</div>

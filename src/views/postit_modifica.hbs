@@ -1,0 +1,33 @@
+<br><br><br>
+<div class="col-md-4 mx-auto mt-4" >
+
+<div class="card">
+
+    <div class="card-header">
+        <h3><b>Edita PostIT !!!</b></h3>
+    </div>
+
+    <div class="card-body">
+
+        <form action="/modificaNota/{{registro._id}}" method="POST">
+
+            <div class="from-group">
+                <label for="titulo"><small><b>Titulo</b></small></label><br>
+                <input type="text" name="titulo" class="form-control" value="{{registro.titulo}}">
+            </div>
+            <br>
+            <div class="from-group">
+                <label for="titulo"><small><b>Descripción</b></small></label><br>
+                <textarea name="descripcion" class="form-control">{{registro.descripcion}}</textarea>
+            </div>
+            <br>
+            <div class="form-group">
+                <br>
+                <button type="submit" class="btn btn-success btn-block">Modificar PostIT !!</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</div>
