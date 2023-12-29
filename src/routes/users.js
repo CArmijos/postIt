@@ -8,6 +8,32 @@ const passport  = require('passport');
  });
 
 /* Login Autenticacion para la aplicacion */
+/**
+ * @openapi
+ * /signin/{cuenta, password}:
+ *    post:
+ *      tags:
+ *        - Cuenta Y Contraseña para Autenticar
+ *      parameters:
+ *        - name: cuenta
+ *        - name: password
+ *      requestBody:
+ *        required: true
+ *    responses:
+ *        200:
+ *          description: OK
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: object
+ *                properties:
+ *                  correo:
+ *                    type: string
+ *                    example: 'usuario@sistema.com'
+ *                  password:
+ *                    type: string
+ *                    example: '******'
+ */
 router.post('/signin',  passport.authenticate('local',
     {
       successRedirect: '/registros',

@@ -7,7 +7,7 @@ mongoose.connect(URI, {
     useUnifiedTopology: true
     //useFindAndModify: false
   })
-  .then((db) => console.log("Base de Datos Conectada....", db.connection.host))
+  .then((db) => console.log("📝 Base de Datos Conectada....", db.connection.host))
   .catch((err) => console.error(err));
 
 module.exports = mongoose;

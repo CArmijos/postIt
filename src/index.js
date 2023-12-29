@@ -6,6 +6,7 @@ const {create}  = require("express-handlebars");
 const session   = require("express-session");
 const flash     = require("connect-flash");
 const passport  = require('passport');
+const {swaggerDocs} = require('./swagger.js');
 
 /* Inicializa Express y Handlebars(Plantilla para Vistas)*/
 const app       = express();
@@ -71,6 +72,7 @@ require('./database.js');
 
 /* Puerto a la escucha... */
 app.listen(PORT, function(err){
-    if (err) console.log("Error en configuración del Server")
-    console.log("Server a la escucha en Port", PORT);
+    if (err) console.log("🔊  Error en configuración del Server");
+    console.log("💻 Server a la escucha en Port", PORT);
+    swaggerDocs(app, PORT);
 });
